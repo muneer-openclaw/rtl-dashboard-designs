@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# RTL Dashboard Designs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+5 unique RTL (Arabic) dashboard designs with TanStack Router, all using blue as the primary color.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit: [rtl-dashboard-1771185301.netlify.app](https://rtl-dashboard-1771185301.netlify.app)
 
-## React Compiler
+## 📦 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ✅ Full RTL (Right-to-Left) support
+- ✅ TanStack Router for navigation
+- ✅ Blue primary color theme
+- ✅ Responsive design
+- ✅ Arabic fonts (Cairo, Tajawal, etc.)
+- ✅ Glassmorphic UI effects
+- ✅ Real investor data from government dashboard
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- TanStack Router
+- Tailwind CSS
+- Vite
+- Lucide React (icons)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💻 Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗️ Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## 📁 Project Structure
+
+```
+src/
+├── routes/
+│   ├── __root.tsx       # Root route
+│   └── index.tsx        # Home page (Dashboard)
+├── components/
+│   └── Dashboard.tsx    # Main dashboard component
+└── main.tsx             # App entry point
+```
+
+## 🎨 Design Variations
+
+1. **Glassmorphic Classic** - Glass effects with gradient background
+2. **Dark Modern Cards** - Card-based layout (coming soon)
+3. **Ultra-Minimalist** - Clean design with icon sidebar (coming soon)
+4. **Bold Geometric** - Diagonal elements and patterns (coming soon)
+5. **Luxury Elegant** - Refined design with gold accents (coming soon)
+
+## 📝 License
+
+MIT
+
+---
+
+Built by Doda for Uncle Muneer 🚀
