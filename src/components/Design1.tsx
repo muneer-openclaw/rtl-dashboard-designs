@@ -17,7 +17,7 @@ const statusColors: Record<string, string> = {
   'قيد المراجعة': 'bg-amber-100 text-amber-700 border-amber-200',
 }
 
-export default function Dashboard() {
+export default function Design1() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100" dir="rtl">
       {/* Header */}
