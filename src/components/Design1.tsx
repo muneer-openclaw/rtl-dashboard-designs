@@ -12,37 +12,37 @@ const investors = [
 ]
 
 const statusColors: Record<string, string> = {
-  'نشطة': 'bg-emerald-100 text-emerald-700 border-emerald-200',
-  'معتمدة': 'bg-blue-100 text-blue-700 border-blue-200',
-  'قيد المراجعة': 'bg-amber-100 text-amber-700 border-amber-200',
+  'نشطة': 'bg-emerald-50 text-emerald-600 border border-emerald-100',
+  'معتمدة': 'bg-blue-50 text-blue-600 border border-blue-100',
+  'قيد المراجعة': 'bg-amber-50 text-amber-600 border border-amber-100',
 }
 
 export default function Design1() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100" dir="rtl">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans" dir="rtl">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-xl border-b sticky top-0 z-50 shadow-lg shadow-primary/10">
+      <header className="bg-white border-b border-slate-100 sticky top-0 z-50">
         <div className="flex items-center justify-between px-8 py-4">
           <div className="flex items-center gap-6">
-            <button className="p-2 hover:bg-blue-50 rounded-lg transition-colors">
-              <Bell className="w-5 h-5 text-slate-600" />
+            <button className="p-2 hover:bg-slate-50 rounded-lg transition-colors border border-transparent hover:border-slate-200">
+              <Bell className="w-5 h-5 text-slate-500" />
             </button>
-            <div className="relative">
-              <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <div className="relative group">
+              <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
               <input
                 type="text"
                 placeholder="بحث..."
-                className="pr-10 pl-4 py-2 w-64 rounded-lg border border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
+                className="pr-10 pl-4 py-2 w-64 rounded-lg bg-slate-50 border border-transparent focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-50 outline-none transition-all"
               />
             </div>
           </div>
           
           <div className="flex items-center gap-4">
             <div className="text-left">
-              <div className="text-sm font-semibold text-slate-700">System Admin</div>
+              <div className="text-sm font-bold text-slate-800">System Admin</div>
               <div className="text-xs text-slate-500">admin@alkhibra.local</div>
             </div>
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg">
+            <div className="w-10 h-10 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-700 font-bold shadow-sm">
               SA
             </div>
           </div>
@@ -51,20 +51,20 @@ export default function Design1() {
 
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-72 bg-white/80 backdrop-blur-xl border-l min-h-[calc(100vh-73px)] p-6 sticky top-[73px]">
+        <aside className="w-72 bg-white border-l border-slate-100 min-h-[calc(100vh-73px)] p-6 sticky top-[73px]">
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">🏛️</span>
+            <div className="flex items-center gap-3 mb-2 p-3 bg-blue-50 rounded-xl border border-blue-100">
+              <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center shadow-md">
+                <span className="text-white font-bold text-lg">🏛️</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-l from-blue-600 to-blue-400 bg-clip-text text-transparent">وزارة العمل</h1>
-                <p className="text-xs text-slate-500">عيدة حقوق ذوى الاعاقة</p>
+                <h1 className="text-lg font-bold text-blue-900">وزارة العمل</h1>
+                <p className="text-[10px] text-blue-600 font-medium">هيئة حقوق ذوى الاعاقة</p>
               </div>
             </div>
           </div>
 
-          <nav className="space-y-2">
+          <nav className="space-y-1">
             {[
               { icon: Home, label: 'لوحة التحكم', active: true },
               { icon: FileText, label: 'الاستثمارات' },
@@ -75,112 +75,89 @@ export default function Design1() {
               <a
                 key={idx}
                 href="#"
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium ${
                   item.active
-                    ? 'bg-blue-500 text-white shadow-lg'
-                    : 'hover:bg-slate-100 text-slate-600 hover:text-slate-900'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-200'
+                    : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
                 }`}
               >
-                <item.icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
+                <item.icon className={`w-5 h-5 ${item.active ? 'text-white' : 'text-slate-400'}`} />
+                <span>{item.label}</span>
               </a>
             ))}
           </nav>
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 bg-slate-50/50">
           <div className="mb-8">
-            <h2 className="text-4xl font-bold bg-gradient-to-l from-blue-600 to-blue-400 bg-clip-text text-transparent mb-2">
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">
               الاستثمارات
             </h2>
-            <p className="text-slate-600">إدارة استثمارات طلبات المستفيدين وبياناتهم الشخصية</p>
+            <p className="text-slate-500">إدارة استثمارات طلبات المستفيدين وبياناتهم الشخصية</p>
           </div>
 
-          {/* Filters */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 mb-6 shadow-lg shadow-blue-100/20 border border-white/40">
-            <div className="flex items-center gap-4 mb-4">
-              <Filter className="w-5 h-5 text-blue-600" />
-              <h3 className="font-semibold text-slate-700">فلاتر البحث</h3>
-            </div>
-            <div className="grid grid-cols-4 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-600 mb-2">اسم المستفيد</label>
-                <input
-                  type="text"
-                  placeholder="ادخل النص هنا"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
-                />
+          {/* Filters - Popup Style */}
+          <div className="bg-white rounded-2xl p-1 mb-6 border border-slate-200 shadow-sm inline-flex items-center gap-2">
+            <button className="flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-slate-100 rounded-xl text-slate-700 font-medium transition-colors border border-slate-200/50">
+              <Filter className="w-4 h-4" />
+              <span>تصفية</span>
+              <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full ml-1">2</span>
+            </button>
+            <div className="h-6 w-px bg-slate-200 mx-2"></div>
+            
+            {/* Filter Chips */}
+            <div className="flex gap-2 pr-2">
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 text-blue-700 text-sm font-medium rounded-lg border border-blue-100">
+                <span>الحالة: نشطة</span>
+                <button className="hover:bg-blue-200 rounded p-0.5 transition-colors">×</button>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-600 mb-2">الهوية الوطنية</label>
-                <input
-                  type="text"
-                  placeholder="ادخل النص هنا"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-600 mb-2">الحالة</label>
-                <select className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none">
-                  <option>اختيار</option>
-                  <option>نشطة</option>
-                  <option>معتمدة</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-600 mb-2">نطاق التاريخ</label>
-                <div className="relative">
-                  <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                  <input
-                    type="text"
-                    placeholder="اختر نطاق التاريخ"
-                    className="w-full pr-10 pl-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
-                  />
-                </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 text-blue-700 text-sm font-medium rounded-lg border border-blue-100">
+                <span>التاريخ: هذا الشهر</span>
+                <button className="hover:bg-blue-200 rounded p-0.5 transition-colors">×</button>
               </div>
             </div>
           </div>
 
           {/* Action Bar */}
           <div className="flex items-center justify-between mb-6">
-            <button className="flex items-center gap-2 px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-all">
-              <span className="text-xl">+</span>
+            <button className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-lg shadow-blue-200 transition-all hover:-translate-y-0.5">
+              <span className="text-lg leading-none">+</span>
               اضافة استثمارة
             </button>
-            <div className="text-sm text-slate-600">
-              اظهار 1 إلى 8 من <span className="font-semibold text-slate-900">65008</span>
+            <div className="text-sm text-slate-500 font-medium bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm">
+              اجمالي السجلات: <span className="font-bold text-slate-900">65,008</span>
             </div>
           </div>
 
           {/* Table */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg shadow-blue-100/20 border border-white/40">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
             <table className="w-full">
               <thead>
-                <tr className="bg-gradient-to-l from-slate-50 to-slate-100 border-b border-slate-200">
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-slate-700">تاريخ التقديم</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-slate-700">الهوية الوطنية</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-slate-700">رقم الاستثمارة</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-slate-700">الحالة</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-slate-700">اسم المستفيد</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-slate-700"></th>
+                <tr className="bg-slate-50 border-b border-slate-200">
+                  <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">تاريخ التقديم</th>
+                  <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">الهوية الوطنية</th>
+                  <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">رقم الاستثمارة</th>
+                  <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">الحالة</th>
+                  <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">اسم المستفيد</th>
+                  <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {investors.map((investor, idx) => (
-                  <tr key={idx} className="hover:bg-blue-50/30 transition-colors group">
-                    <td className="px-6 py-4 text-sm text-slate-600">{investor.date}</td>
-                    <td className="px-6 py-4 text-sm font-mono text-slate-700">{investor.nationalId}</td>
-                    <td className="px-6 py-4 text-sm font-mono text-blue-600 font-medium">{investor.id}</td>
+                  <tr key={idx} className="hover:bg-blue-50/50 transition-colors group">
+                    <td className="px-6 py-4 text-sm text-slate-600 font-medium">{investor.date}</td>
+                    <td className="px-6 py-4 text-sm font-mono text-slate-500 bg-slate-50 w-fit rounded px-2 py-1 mx-6 my-2">{investor.nationalId}</td>
+                    <td className="px-6 py-4 text-sm font-mono text-blue-600 font-bold">{investor.id}</td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex px-3 py-1 rounded-full text-xs font-medium border ${statusColors[investor.status]}`}>
+                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${statusColors[investor.status]}`}>
                         {investor.status}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm font-semibold text-slate-900">{investor.name}</td>
-                    <td className="px-6 py-4">
-                      <button className="opacity-0 group-hover:opacity-100 p-2 hover:bg-blue-100 rounded-lg transition-all">
-                        <Eye className="w-4 h-4 text-blue-600" />
+                    <td className="px-6 py-4 text-sm font-bold text-slate-800">{investor.name}</td>
+                    <td className="px-6 py-4 text-left">
+                      <button className="opacity-0 group-hover:opacity-100 p-2 hover:bg-blue-100 rounded-lg transition-all text-blue-600">
+                        <Eye className="w-4 h-4" />
                       </button>
                     </td>
                   </tr>
@@ -189,25 +166,27 @@ export default function Design1() {
             </table>
 
             {/* Pagination */}
-            <div className="border-t border-slate-200 px-6 py-4 bg-slate-50/50">
-              <div className="flex items-center justify-center gap-2">
-                <button className="p-2 rounded-lg hover:bg-white border border-slate-200 transition-all">
-                  <ChevronRight className="w-4 h-4 text-slate-600" />
+            <div className="border-t border-slate-200 px-6 py-4 bg-slate-50 flex items-center justify-between">
+              <span className="text-xs text-slate-400 font-medium">عرض 1-8 من 65008</span>
+              <div className="flex items-center gap-2">
+                <button className="p-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 text-slate-400 hover:text-slate-600 transition-all disabled:opacity-50">
+                  <ChevronRight className="w-4 h-4" />
                 </button>
-                {[1, 2, 3, 4].map((page) => (
+                {[1, 2, 3].map((page) => (
                   <button
                     key={page}
-                    className={`w-9 h-9 rounded-lg font-medium transition-all ${
+                    className={`w-8 h-8 rounded-lg text-sm font-bold transition-all ${
                       page === 1
-                        ? 'bg-blue-500 text-white shadow-lg'
-                        : 'hover:bg-white border border-slate-200 text-slate-600'
+                        ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
+                        : 'text-slate-500 hover:bg-white hover:text-blue-600 border border-transparent hover:border-slate-200'
                     }`}
                   >
                     {page}
                   </button>
                 ))}
-                <button className="p-2 rounded-lg hover:bg-white border border-slate-200 transition-all">
-                  <ChevronLeft className="w-4 h-4 text-slate-600" />
+                <span className="text-slate-400 text-sm">...</span>
+                <button className="p-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 text-slate-400 hover:text-slate-600 transition-all">
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
               </div>
             </div>
